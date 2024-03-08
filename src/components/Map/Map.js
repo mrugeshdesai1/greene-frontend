@@ -31,7 +31,6 @@ function Map() {
     function renderStations() {
         axios.get('http://localhost:8080/charging-stations')
           .then(response => {
-            console.log(response)
             setChargingStations(response.data)
           }).catch(error => {
             console.log("There is problem fetching charging stations");
@@ -49,7 +48,7 @@ function Map() {
       {!isLoaded ? (
         <h1 className= 'greene__locations-loading'>Loading...</h1>
       ) : (
-        <GoogleMap className='greene__locations-mapcontainer' mapContainerStyle={mapContainerStyle} zoom={10} center={center}>
+        <GoogleMap className='greene__locations-mapcontainer' mapContainerStyle={mapContainerStyle} zoom={8} center={center}>
           {chargingStations.map(station => (
             <Marker 
               key={station.id}

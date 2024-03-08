@@ -1,0 +1,19 @@
+@import "../../styles/mixins";
+@import "../../styles/fonts";
+@import "../../styles/global";
+@import "../../styles/variables";
+
+
+.greene-mapcontainer {
+
+    &-markerbutton {
+        background: none;
+        border: none;
+        cursor: pointer;
+    }
+
+    &-marker {
+        width: 1.25rem;
+        height: 1.25rem;
+    }
+}
