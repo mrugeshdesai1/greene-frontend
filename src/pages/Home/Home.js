@@ -6,7 +6,6 @@ import LocationMap from '../../components/LocationMap/LocationMap';
 function Home() {
   return (
     <>
-      <div>Home</div>
         <Map />
       {/* <LocationMap /> */}
     </>

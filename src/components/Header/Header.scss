@@ -2,3 +2,65 @@
 @import "../../styles/fonts";
 @import "../../styles/global";
 @import "../../styles/variables";
+
+.greene__header {
+    height: 4.3125rem;
+    background: #333;
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    z-index: 999;
+    position: sticky;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: center;
+    align-content: end;
+
+    &-logo {
+        display: flex;
+        width: 5.46rem;
+        height: 1.5rem;
+        justify-content: flex-end;
+        align-items: center;
+        flex-shrink: 0;
+        font-size: 1.25rem;
+        font-weight: 400;
+        color: white;
+        line-height: normal;
+        order: 2;
+    }
+
+    &-logoselection {
+        font-size: 1.25rem;
+        font-weight: 400;
+        color: #D2EA9B;
+        line-height: normal;
+    }
+
+    &-navigation {
+        display: none;
+
+        @include tablet-breakpoint {
+            display: flex;
+            flex-direction: row;
+        }    
+    }
+
+    &-hamburger {
+        display: none;
+    }
+
+    &-hamburgeropen {
+        display: inline;
+        background-color: #333;
+        height: 20vh;
+        width: 20vw;
+        margin-top: 4.3125rem;
+        position:absolute;
+        order: 1;
+    }
+
+    &-navlink {
+        list-style-type: none;
+    }
+}

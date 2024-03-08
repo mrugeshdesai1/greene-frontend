@@ -1,8 +1,9 @@
 import React from 'react';
 import './LocationMap.scss';
 import ReactMapGL, {Marker , Popup} from "react-map-gl";
+import mapboxgl from 'mapbox-gl';
 import axios from 'axios';
-import { useState , useEffect } from 'react';
+import { useState , useEffect , useRef } from 'react';
 import locationIcon from "../../assets/Icons/location.png";
 
 function LocationMap() {
@@ -17,6 +18,7 @@ function LocationMap() {
     height: "100vh",
     zoom: 10
   })
+
 
   // Fetch charging stations data from the Express.js backend
   function renderStations() {

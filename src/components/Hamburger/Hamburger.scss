@@ -1,0 +1,31 @@
+@import "../../styles/mixins";
+@import "../../styles/fonts";
+@import "../../styles/global";
+@import "../../styles/variables";
+
+.greene-hamburger {
+    width: 2rem;
+    height: 2rem;
+    display: flex;
+    justify-content: space-around;
+    flex-flow: column nowrap;
+    z-index: 10;
+    background-repeat: no-repeat;
+    background-size: cover;
+    order: 1;
+
+    @include tablet-breakpoint {
+        display: none;
+    }
+
+    &-burger {
+        width: 2rem;
+        height: 0.25rem;
+        background-color: lightgray;
+        background-repeat: no-repeat;
+        background-size: cover;
+        opacity: 50%;
+        transform-origin: 0.0625rem;
+        transition: all 0.3s linear;
+    }
+}

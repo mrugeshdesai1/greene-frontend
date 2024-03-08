@@ -1,0 +1,17 @@
+@import "../../styles/mixins";
+@import "../../styles/fonts";
+@import "../../styles/global";
+@import "../../styles/variables";
+
+.greene-headercta {
+
+    &-button {
+        width: 4.189rem;
+        height: 2.5rem;
+        flex-shrink: 0;
+        border-radius: 0.625rem;
+        background: #E7F0D2;
+        border-style: none;
+        order: 3;
+    }
+}
