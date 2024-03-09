@@ -5,6 +5,14 @@
 
 .greene-headercta {
 
+    @include tablet-breakpoint {
+        width: 8.125rem;
+    }
+
+    @include desktop-breakpoint {
+        width: 14.0625rem;
+    }
+
     &-button {
         width: 4.189rem;
         height: 2.5rem;
@@ -12,6 +20,18 @@
         border-radius: 0.625rem;
         background: #E7F0D2;
         border-style: none;
-        order: 3;
+        font-size: 1rem;
+
+        @include tablet-breakpoint {
+            width: 8.125rem;
+            height: 2.51775rem;
+            align-self: self-end;
+        }
+
+        @include desktop-breakpoint {
+            width: 14.0625rem;
+            height: 4.525rem;
+            font-size: 2rem;
+        }
     }
 }

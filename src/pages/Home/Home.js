@@ -6,8 +6,8 @@ import LocationMap from '../../components/LocationMap/LocationMap';
 function Home() {
   return (
     <>
-        <Map />
-      {/* <LocationMap /> */}
+        {/* <Map /> */}
+      <LocationMap />
     </>
   )
 }

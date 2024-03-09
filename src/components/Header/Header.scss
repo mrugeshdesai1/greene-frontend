@@ -11,23 +11,41 @@
     width: 100%;
     z-index: 999;
     position: sticky;
-    flex-wrap: wrap;
     justify-content: space-between;
     align-items: center;
-    align-content: end;
+
+    @include tablet-breakpoint {
+        height: 7.875rem;
+        padding: 0 3.75rem;
+    }
+
+    @include desktop-breakpoint {
+        height: 11.125rem;
+        padding: 0 7.875rem;
+    }
 
     &-logo {
-        display: flex;
         width: 5.46rem;
         height: 1.5rem;
-        justify-content: flex-end;
-        align-items: center;
         flex-shrink: 0;
         font-size: 1.25rem;
         font-weight: 400;
         color: white;
         line-height: normal;
-        order: 2;
+        display: flex;
+        justify-content: flex-end;
+        align-items: center;
+
+        @include tablet-breakpoint {
+            font-size: 3rem;
+            width: 40%;
+            height: 6.1875rem;
+        }
+
+        @include desktop-breakpoint {
+            font-size: 4rem;
+            height: 6.1875rem;
+        }
     }
 
     &-logoselection {
@@ -35,32 +53,55 @@
         font-weight: 400;
         color: #D2EA9B;
         line-height: normal;
+        display: flex;
+        justify-content: flex-start;
+        align-items: center;
+
+        @include tablet-breakpoint {
+            font-size: 3rem;
+            width: 23.25rem;
+            height: 6.1875rem;
+        }
+
+        @include desktop-breakpoint {
+            font-size: 4rem;
+            height: 6.1875rem;
+        }
+    }
+
+    &-navcontainer{
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: center;
+
+        @include tablet-breakpoint {
+            width: 100%;
+        }
     }
 
     &-navigation {
-        display: none;
+        color: #FFF;
+        display: flex;
+        flex-direction: row;
+        justify-content: space-evenly;
 
         @include tablet-breakpoint {
-            display: flex;
-            flex-direction: row;
-        }    
-    }
+            width: 100%;
+        }
 
-    &-hamburger {
-        display: none;
-    }
-
-    &-hamburgeropen {
-        display: inline;
-        background-color: #333;
-        height: 20vh;
-        width: 20vw;
-        margin-top: 4.3125rem;
-        position:absolute;
-        order: 1;
+        @include desktop-breakpoint {
+            font-size: 2rem;
+        }
     }
 
     &-navlink {
         list-style-type: none;
+        display: none;
+
+        @include tablet-breakpoint {
+            width: auto;
+            display: inline;
+        }
     }
 }

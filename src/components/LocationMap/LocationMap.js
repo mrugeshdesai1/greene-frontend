@@ -1,24 +1,13 @@
 import React from 'react';
 import './LocationMap.scss';
-import ReactMapGL, {Marker , Popup} from "react-map-gl";
 import mapboxgl from 'mapbox-gl';
 import axios from 'axios';
 import { useState , useEffect , useRef } from 'react';
-import locationIcon from "../../assets/Icons/location.png";
+import 'mapbox-gl/dist/mapbox-gl.css';
 
 function LocationMap() {
 
   const [chargingStations, setChargingStations] = useState([]);
-  const [selectedStation, setSelectedStation] = useState(null);  
-  
-  const [viewport, setViewport] = useState ({
-    latitude: 51.0456064,
-    longitude: -114.057541,
-    width: "100vw",
-    height: "100vh",
-    zoom: 10
-  })
-
 
   // Fetch charging stations data from the Express.js backend
   function renderStations() {
@@ -35,38 +24,38 @@ function LocationMap() {
     renderStations()
   }, []);
 
+  const mapContainer = useRef(null);
+
+  useEffect(() => {
+    mapboxgl.accessToken = process.env.REACT_APP_MAPBOX_API_KEY;
+    const map = new mapboxgl.Map({
+      container: mapContainer.current,
+      style: 'mapbox://styles/mrugeshdesai1/clthxmret00zc01ptge8hhedg',
+      center: [-114.057541,51.0456064], //[lng, lat] order
+      zoom: 8,
+    });
+
+  chargingStations.forEach((location) => {
+    const popup = new mapboxgl.Popup().setHTML(
+      `<div classname='greene-mapcontainer-locationdetails'><p>${location.station_name}<p><p>${location.station_address}</p></div>`
+    );
+
+    new mapboxgl.Marker()
+        .setLngLat([location.lng,location.lat])
+        .setPopup(popup)
+        .addTo(map)
+        .getElement()
+        .addEventListener('click', () => {
+          popup.addTo(map);
+        });
+    });
+
+    return () => map.remove();
+  }, []);
+
   return (
     <div className='greene-mapcontainer'>
-        <ReactMapGL 
-            {...viewport}
-            mapboxAccessToken={process.env.REACT_APP_MAPBOX_API_KEY}
-            mapStyle="mapbox://styles/mrugeshdesai1/clthxmret00zc01ptge8hhedg"
-            onViewportChange = {setViewport} 
-            >
-
-            {chargingStations.map(station => (
-                <Marker 
-                key={station.id}
-                latitude= {station.lat}
-                longitude= {station.lng}
-                onClick={() => setSelectedStation(station)} 
-                >
-                    <button className='greene-mapcontainer-markerbutton'>
-                        <img src={locationIcon} alt='locationIcon' className='greene-mapcontainer-marker'/>
-                    </button>
-                </Marker>    
-            ))}
-
-            {selectedStation ? (
-                <Popup latitude= {chargingStations.lat} longitude= {chargingStations.lng} onClose={() => {setSelectedStation(null)}}>
-                    <div>
-                        <h3>{chargingStations.name}</h3>
-                        <p>{chargingStations.address}</p>
-                    </div>
-                </Popup>
-            ) : null}
-
-        </ReactMapGL>
+      <div ref={mapContainer} className='greene-mapcontainer-map' />
     </div>
   )
 }

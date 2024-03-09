@@ -15,15 +15,15 @@ function Header() {
   return (
     <header className='greene__header'>
         <div className='greene__header-logo'>Green-<span className='greene__header-logoselection'>E</span></div>
-        <ul className='greene__header-navigation'>
-          <li className='greene__header-navlink'>Home</li>
-          <li className='greene__header-navlink'>About</li>
-          <li className='greene__header-navlink'>Contact</li>
-          <div className= {hamburgerOpen===false ? 'greene__header-hamburger' : 'greene__header-hamburgeropen'} onClick={toggleHamburger}>
-            <Hamburger />
-          </div>
-        </ul>
-        <HeaderActionButton />
+        <div className='greene__header-navcontainer'>
+          <ul className='greene__header-navigation'>
+            <li className='greene__header-navlink'>Home</li>
+            <li className='greene__header-navlink'>About</li>
+            <li className='greene__header-navlink'>Contact</li>
+          </ul>
+          <Hamburger isOpen={hamburgerOpen} toggle={toggleHamburger}/>
+          <HeaderActionButton />
+        </div>
     </header>
   )
 }
