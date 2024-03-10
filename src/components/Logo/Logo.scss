@@ -1,0 +1,50 @@
+@import "../../styles/mixins";
+@import "../../styles/fonts";
+@import "../../styles/global";
+@import "../../styles/variables";
+
+.greene__logo {
+    width: 25%;
+    height: 1.5rem;
+    flex-shrink: 0;
+    font-size: 1.25rem;
+    font-weight: 400;
+    color: white;
+    line-height: normal;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+
+    @include tablet-breakpoint {
+        font-size: 3rem;
+        width: 40%;
+        height: 6.1875rem;
+    }
+
+    @include desktop-breakpoint {
+        font-size: 4rem;
+        height: 6.1875rem;
+    }
+
+
+    &-logoselection {
+        font-size: 1.25rem;
+        font-weight: 400;
+        color: #D2EA9B;
+        line-height: normal;
+        display: flex;
+        justify-content: flex-start;
+        align-items: center;
+
+        @include tablet-breakpoint {
+            font-size: 3rem;
+            width: 23.25rem;
+            height: 6.1875rem;
+        }
+
+        @include desktop-breakpoint {
+            font-size: 4rem;
+            height: 6.1875rem;
+        }
+    }
+}

@@ -2,3 +2,101 @@
 @import "../../styles/fonts";
 @import "../../styles/global";
 @import "../../styles/variables";
+
+.greene__footer {
+    background: #333;
+    height: 17.5625rem;
+    padding: 2.25rem;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+
+    &-contactdetails {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;  
+        text-align: left;
+    }
+
+    &-title {
+        font-size: 1.5rem;
+        color: #D2EA9B;
+    }
+
+    &-address, &-phone{
+        font-size: 0.875rem;
+        color: #D2EA9B;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+    }
+
+    &-addresstitle , &-phonetitle , &-email{
+        text-decoration: underline;
+    }
+
+    &-otherdetails{
+        font-size: 0.875rem;
+        color: #D2EA9B;
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-start;
+        text-align: left;
+    }
+
+    &-subscribe {
+        height: 50%;
+    }
+
+    &-subscribeform, &-inputcontainer{
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-start;
+        text-align: left;
+    }
+
+    &-addemail {
+        width: 8.185rem;
+        height: 1.75rem;
+        flex-shrink: 0; 
+        border-radius: 0.625rem;
+        background: #FFF;
+        align-items: center;
+        padding: 0.375rem;
+        border-style: none;
+        margin: 0.25rem 0rem;
+    }
+
+    &-addbutton {
+        width: 4.19rem;
+        height: 1.75rem;
+        flex-shrink: 0;
+        border-radius: 0.625rem;
+        background: #E7F0D2;
+        font-size: 0.75rem;
+    }
+
+    &-icons {
+        width: 50%;
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+    }
+
+    &-socialicons {
+        height: 1.6875rem;
+        width: 1.6875rem;
+    }
+     
+    &-socialmedia {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-evenly;
+        height: 40%;
+    }
+
+    &-footerlogo {
+        margin-left: 10%;
+    }
+    
+}

@@ -5,6 +5,8 @@
 
 .greene-headercta {
 
+    width: 4.189rem;
+
     @include tablet-breakpoint {
         width: 8.125rem;
     }
@@ -21,6 +23,7 @@
         background: #E7F0D2;
         border-style: none;
         font-size: 1rem;
+        order: 3;
 
         @include tablet-breakpoint {
             width: 8.125rem;

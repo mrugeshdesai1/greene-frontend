@@ -14,7 +14,7 @@ function LocationMap() {
     axios.get('http://localhost:8080/charging-stations')
       .then(response => {
         console.log(response.data)
-        setChargingStations(response.data)
+        setChargingStations(response.data);
       }).catch(error => {
         console.log("There is problem fetching charging stations");
       });
@@ -25,6 +25,8 @@ function LocationMap() {
   }, []);
 
   const mapContainer = useRef(null);
+
+
 
   useEffect(() => {
     mapboxgl.accessToken = process.env.REACT_APP_MAPBOX_API_KEY;
@@ -51,7 +53,7 @@ function LocationMap() {
     });
 
     return () => map.remove();
-  }, []);
+  }, [chargingStations]);
 
   return (
     <div className='greene-mapcontainer'>

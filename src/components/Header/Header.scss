@@ -11,8 +11,10 @@
     width: 100%;
     z-index: 999;
     position: sticky;
+    top: 0;
     justify-content: space-between;
     align-items: center;
+    padding: 0 2.25rem;
 
     @include tablet-breakpoint {
         height: 7.875rem;
@@ -22,51 +24,6 @@
     @include desktop-breakpoint {
         height: 11.125rem;
         padding: 0 7.875rem;
-    }
-
-    &-logo {
-        width: 5.46rem;
-        height: 1.5rem;
-        flex-shrink: 0;
-        font-size: 1.25rem;
-        font-weight: 400;
-        color: white;
-        line-height: normal;
-        display: flex;
-        justify-content: flex-end;
-        align-items: center;
-
-        @include tablet-breakpoint {
-            font-size: 3rem;
-            width: 40%;
-            height: 6.1875rem;
-        }
-
-        @include desktop-breakpoint {
-            font-size: 4rem;
-            height: 6.1875rem;
-        }
-    }
-
-    &-logoselection {
-        font-size: 1.25rem;
-        font-weight: 400;
-        color: #D2EA9B;
-        line-height: normal;
-        display: flex;
-        justify-content: flex-start;
-        align-items: center;
-
-        @include tablet-breakpoint {
-            font-size: 3rem;
-            width: 23.25rem;
-            height: 6.1875rem;
-        }
-
-        @include desktop-breakpoint {
-            font-size: 4rem;
-            height: 6.1875rem;
-        }
     }
 
     &-navcontainer{
@@ -88,20 +45,30 @@
 
         @include tablet-breakpoint {
             width: 100%;
+            display: flex;
+            flex-direction: row;
         }
 
         @include desktop-breakpoint {
             font-size: 2rem;
+            display: flex;
+            flex-direction: row;
         }
     }
 
     &-navlink {
         list-style-type: none;
-        display: none;
+        width: auto;
 
         @include tablet-breakpoint {
             width: auto;
-            display: inline;
+            display: flex;
         }
+    }
+
+    &-navigationopen {
+        display: flex;
+        flex-direction: column;
+        color: #FFF;
     }
 }
