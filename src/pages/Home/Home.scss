@@ -2,3 +2,10 @@
 @import "../../styles/fonts";
 @import "../../styles/global";
 @import "../../styles/variables";
+
+.greene__home {
+
+    &-mainsection {
+        background: var(--Background, linear-gradient(180deg, #E3F9B1 0%, rgba(228, 235, 212, 0.00) 100%));
+    }
+}

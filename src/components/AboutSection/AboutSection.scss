@@ -1,0 +1,74 @@
+@import "../../styles/mixins";
+@import "../../styles/fonts";
+@import "../../styles/global";
+@import "../../styles/variables";
+
+.greene__aboutsection {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    padding: 1.5rem 2.25rem;
+    height: 22rem;
+    width: 80%;
+
+    &-image {
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-start;
+        margin-right: 2rem;
+        width: auto;
+    }
+
+    &-firstimage {
+        border-radius: 0.3125rem;
+        width: 6.375rem;
+        height: 10.6875rem;
+        flex-shrink: 0;
+        background-repeat: no-repeat;
+        background-size: cover;
+    }
+
+    &-secondimage {
+        border-radius: 0.3125rem;
+        width: 6.8125rem;
+        height: 11.5625;
+        flex-shrink: 0;
+        background-repeat: no-repeat;
+        background-size: cover;
+        position: relative;
+        left: 2rem;
+        bottom: 4rem;
+    } 
+    
+    &-description {
+        padding: 1rem;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        text-align: left;
+    }
+
+    &-boldtext {
+        font-size: 1.25rem;
+        max-width: 13.375rem;
+        min-width: 13.375rem;
+    }
+
+    &-text {
+        font-size: 0.875rem;
+        max-width: 13rem;
+        min-width: 13rem;
+    }
+
+    &-button {
+        border-radius: 0.625rem;
+        background: #333;
+        width: 6.375rem;
+        height: 2rem;
+        flex-shrink: 0;
+        color: white;
+        font-size: 0.875rem;
+        border-style: none;
+    }
+
+}
