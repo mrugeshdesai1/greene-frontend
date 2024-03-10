@@ -31,7 +31,7 @@ function Footer() {
           <form className='greene__footer-subscribeform'> 
             <div className='greene__footer-inputcontainer'>
               <label className='greene__footer-sectiontitle' htmlFor='emailField'>Subscribe to get updates</label>
-              <textarea className="greene__footer-addemail" id="emailField" name="email" placeholder="E-mail"></textarea>
+              <input className="greene__footer-addemail" id="emailField" name="email" placeholder="E-mail"></input>
             </div>
             <button className='greene__footer-addbutton'>Subscribe</button>
           </form>
