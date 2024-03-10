@@ -11,16 +11,43 @@
     flex-direction: row;
     justify-content: space-between;
 
+    @include tablet-breakpoint {
+        height: 40.0625rem;
+        padding: 3.75rem
+    }
+
+    @include desktop-breakpoint {
+        height: 40.0625rem;
+        padding: 7.875rem
+    }
+
+
     &-contactdetails {
         display: flex;
         flex-direction: column;
         justify-content: space-between;  
         text-align: left;
+
+        @include tablet-breakpoint {
+            height: 60%;
+        }
+
+        @include desktop-breakpoint {
+            height: 100%;
+        }
     }
 
     &-title {
         font-size: 1.5rem;
         color: #D2EA9B;
+
+        @include tablet-breakpoint {
+            font-size: 3rem;
+        }
+
+        @include desktop-breakpoint {
+            font-size: 5rem;
+        }
     }
 
     &-address, &-phone{
@@ -29,6 +56,21 @@
         display: flex;
         flex-direction: column;
         justify-content: space-between;
+
+        @include tablet-breakpoint {
+            font-size: 1rem;
+        }
+
+        @include desktop-breakpoint {
+            font-size: 2rem;
+        }
+    }
+
+    &-phone {
+
+        @include desktop-breakpoint {
+            font-size: 1.25rem;
+        }
     }
 
     &-addresstitle , &-phonetitle , &-email{
@@ -42,10 +84,28 @@
         flex-direction: column;
         justify-content: flex-start;
         text-align: left;
+
+        @include tablet-breakpoint {
+            height: 50%;
+            font-size: 1rem;
+        }
+
+        @include desktop-breakpoint {
+            height: 100%;
+        }
     }
 
     &-subscribe {
         height: 50%;
+
+        @include tablet-breakpoint {
+            height: 70%;
+        }
+
+        @include desktop-breakpoint {
+            height: 60%;
+        }
+
     }
 
     &-subscribeform, &-inputcontainer{
@@ -53,6 +113,13 @@
         flex-direction: column;
         justify-content: flex-start;
         text-align: left;
+    }
+
+    &-sectiontitle {
+        
+        @include desktop-breakpoint {
+            font-size: 2.5rem;
+        }
     }
 
     &-addemail {
@@ -65,6 +132,24 @@
         padding: 0.375rem;
         border-style: none;
         margin: 0.25rem 0rem;
+        resize: none;
+        overflow: hidden;
+
+        @include tablet-breakpoint {
+            margin: 0.5rem 0rem;
+            width: 15.875rem;
+            height: 2.6875rem;
+            font-size: 1.5rem;
+            padding: 0.5rem;
+        }
+
+        @include desktop-breakpoint {
+            margin: 1rem 0rem;
+            width: 27.4375rem;
+            height: 3.75rem;
+            font-size: 2rem;
+            padding: 0.625rem;
+        }
     }
 
     &-addbutton {
@@ -74,6 +159,18 @@
         border-radius: 0.625rem;
         background: #E7F0D2;
         font-size: 0.75rem;
+
+        @include tablet-breakpoint {
+            width: 8.125rem;
+            height: 2.6875rem;
+            font-size: 1rem;
+        }
+
+        @include tablet-breakpoint {
+            width: 14.0625rem;
+            height: 3.75rem;
+            font-size: 2rem;
+        }
     }
 
     &-icons {
@@ -81,11 +178,24 @@
         display: flex;
         flex-direction: row;
         justify-content: space-between;
+
+        @include tablet-breakpoint {
+            width: 50%
+        }
+
+        @include desktop-breakpoint {
+            width: 35%
+        }
     }
 
     &-socialicons {
         height: 1.6875rem;
         width: 1.6875rem;
+
+        @include tablet-breakpoint {
+            height: 2.8125rem;
+            width: 2.8125rem;
+        }
     }
      
     &-socialmedia {
@@ -93,10 +203,54 @@
         flex-direction: column;
         justify-content: space-evenly;
         height: 40%;
+
+        @include tablet-breakpoint {
+            height: 55%;
+        }
+
+        @include desktop-breakpoint {
+            font-size: 1.5rem;
+        }
     }
 
-    &-footerlogo {
-        margin-left: 10%;
+    &-logo {
+        height: 1.5rem;
+        flex-shrink: 0;
+        font-size: 1.25rem;
+        font-weight: 400;
+        color: white;
+        line-height: normal;
+
+    
+        @include tablet-breakpoint {
+            font-size: 3rem;
+            height: 6.1875rem;
+        }
+    
+        @include desktop-breakpoint {
+            font-size: 4rem;
+            height: 6.1875rem;
+        }
+
+    }    
+    
+    
+    &-logoselection {
+        font-size: 1.25rem;
+        font-weight: 400;
+        line-height: normal;
+        color: #D2EA9B;
+    
+        @include tablet-breakpoint {
+            font-size: 3rem;
+            width: 23.25rem;
+            height: 6.1875rem;
+        }
+    
+        @include desktop-breakpoint {
+            font-size: 4rem;
+            height: 6.1875rem;
+        }
     }
     
 }

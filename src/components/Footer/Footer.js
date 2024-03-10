@@ -24,7 +24,7 @@ function Footer() {
             <p className='greene__footer-number'>+1[999]999-9999</p>
           </div>
         </div>
-        <div className='greene__footer-footerlogo'><Logo /></div>
+        <div className='greene__footer-logo'>Green-<span className='greene__footer-logoselection'>E</span></div>
       </div>
       <div className='greene__footer-otherdetails'>
         <div className='greene__footer-subscribe'>
