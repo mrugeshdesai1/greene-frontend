@@ -7,3 +7,21 @@
     list-style-type: none;
     text-decoration: none;
   }
+
+  body {
+    margin: 0;
+    padding: 0;
+    width: 100%;
+}
+
+* {
+    box-sizing: border-box;
+}
+
+a {
+    text-decoration: none;
+}
+
+p {
+    margin: 0;
+}

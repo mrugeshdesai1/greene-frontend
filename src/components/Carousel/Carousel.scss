@@ -1,0 +1,90 @@
+@import "../../styles/mixins";
+@import "../../styles/fonts";
+@import "../../styles/global";
+@import "../../styles/variables";
+
+.greene__carousel {
+    padding: 2.25rem;
+
+    &-title {
+        color: #506249;
+        font-size: 2rem;
+        font-style: normal;
+        font-weight: 400;
+        line-height: 100%;
+        text-align: left;
+    }
+
+    &-slider {
+        padding-top: 2.25rem;
+        width: auto;
+    }
+
+    &-card {
+        width: 12.625rem !important;
+        height: 18.5rem;
+        flex-shrink: 0;
+        border-radius: 1.25rem;
+        border: 0.25 solid #506249;
+        background: #333;
+        color: #E7F0D2;
+        padding: 2rem 1rem;
+        font-size: 0.8125rem;
+    }
+
+    &-rate {
+        font-size: 1.25rem;
+        padding-top: 1rem;
+        border-bottom: 0.0625rem solid #D2EA9B;
+    }
+
+    &-range {
+        padding-top: 0.75rem;
+    }
+
+    &-rangedetail {
+        padding-bottom: 0.75rem;
+    }
+
+    &-chargedetail{
+        padding-bottom: 1.5rem;
+        display: flex;
+        flex-direction: row;
+        height: 30%;
+    }
+
+    &-fastcharge {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+    }
+
+    &-slowcharge {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        border-left: 0.0625rem solid #D2EA9B;
+    }
+
+    &-button {
+        width: 8rem;
+        height: 2.5rem;
+        flex-shrink: 0;
+        border-radius: 0.625rem;
+        background: #D2EA9B;
+        border-style: none;
+        font-size: 1.25rem;
+    }
+
+    &-icons {
+        font-family: 'slick';
+        font-size: 20px;
+        line-height: 1;
+        opacity: .75;
+        height: 1.25rem;
+        width: 1.25rem;
+        position: relative;
+        bottom: 9rem;
+        right: 10rem;
+    }
+}
