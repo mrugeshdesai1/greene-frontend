@@ -3,34 +3,6 @@ import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import Slider from "react-slick";
 import './Carousel.scss';
-import nextIcon from '../../assets/Icons/angle-right.png'
-
-function NextArrow(props) {
-    const { className, style, onClick } = props;
-    return (
-    //   <div
-    //     className={className}
-    //     style={{ ...style, display: "block", background: "black" }}
-    //     onClick={onClick}
-    //   />
-    <img
-        src={nextIcon}
-        className='greene__carousel-icons'
-        onClick={onClick}
-    />
-    );
-  }
-  
-  function PrevArrow(props) {
-    const { className, style, onClick } = props;
-    return (
-      <div
-        className={className}
-        style={{ ...style, display: "block", background: "black" }}
-        onClick={onClick}
-      />
-    );
-  }
 
 
 function Carousel() {
@@ -39,16 +11,15 @@ function Carousel() {
         dots: false,
         infinite: false,
         speed: 500,
-        nextArrow: <NextArrow />,
-        prevArrow: <PrevArrow />,
         slidesToShow: 3,
         slidesToScroll: 1,
         responsive: [
             {
                 breakpoint: 768,
                 settings: {
-                  slidesToShow: 1,
-                  slidesToScroll: 1
+                    dots: true,  
+                    slidesToShow: 1,
+                    slidesToScroll: 1
                 }
             }
           ]
