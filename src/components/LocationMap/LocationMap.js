@@ -57,7 +57,10 @@ function LocationMap() {
 
   return (
     <div className='greene-mapcontainer'>
-      <div ref={mapContainer} className='greene-mapcontainer-map' />
+      <div className='greene-mapcontainer-title'>Find a charger</div>
+      <div className='greene-mapcontainer-mapbox'>
+        <div ref={mapContainer} className='greene-mapcontainer-map' />
+      </div>
     </div>
   )
 }
