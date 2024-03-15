@@ -3,6 +3,7 @@ import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import Slider from "react-slick";
 import './Carousel.scss';
+import { useNavigate } from 'react-router-dom';
 
 
 function Carousel() {
@@ -25,6 +26,14 @@ function Carousel() {
           ]
       };
 
+  // Initialise useNavigate hook to redirect to edit inventory screen
+  let navigate = useNavigate();
+
+  // Sending the details to edit inventory page
+  const handleClick = function (event) {
+    navigate(`/register`);
+  }
+
   return (
     <div className='greene__carousel'>
         <div className='greene__carousel-title'>Subscribe and Save</div>
@@ -44,7 +53,7 @@ function Carousel() {
                         <div className='greene__carousel-type'>Level 2</div>
                     </div>
                 </div>
-                <button className='greene__carousel-button'>Subscribe</button>
+                <button className='greene__carousel-button' onClick={handleClick}>Subscribe</button>
             </div>
             <div className='greene__carousel-card'>
                 <div className='greene__carousel-cardtitle'>Standard</div>
@@ -61,7 +70,7 @@ function Carousel() {
                         <div className='greene__carousel-type'>Level 2</div>
                     </div>
                 </div>
-                <button className='greene__carousel-button'>Subscribe</button>
+                <button className='greene__carousel-button' onClick={handleClick}>Subscribe</button>
             </div>
             <div className='greene__carousel-card'>
                 <div className='greene__carousel-cardtitle'>Unlimited</div>
@@ -78,7 +87,7 @@ function Carousel() {
                         <div className='greene__carousel-type'>Level 2</div>
                     </div>
                 </div>
-                <button className='greene__carousel-button'>Subscribe</button>
+                <button className='greene__carousel-button' onClick={handleClick}>Subscribe</button>
             </div>
         </Slider>
     </div>

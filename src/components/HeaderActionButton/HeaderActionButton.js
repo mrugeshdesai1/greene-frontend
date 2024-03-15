@@ -4,7 +4,7 @@ import { Link } from 'react-router-dom';
 
 function HeaderActionButton() {
   return (
-    <Link className='greene-headercta'>
+    <Link to={`/register`} className='greene-headercta'>
         <button className='greene-headercta-button'>Sign Up</button>
     </Link>
   )
