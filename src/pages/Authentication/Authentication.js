@@ -90,7 +90,7 @@ function Authentication() {
           </form>
           <div className='greene__authentication-needaccount'>
             <div className='greene__authentication-text'>Need an account?</div>
-            <Link to={`/register`} className='greene__authentication-navigation'>Register</Link>
+            <Link to={`/register`} className='greene__authentication-navigation'>Register here</Link>
           </div>
         </div>
       )}
