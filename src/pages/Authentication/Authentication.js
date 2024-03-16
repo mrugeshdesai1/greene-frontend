@@ -7,7 +7,7 @@ import axios from 'axios';
 
 function Authentication() {
 
-  const { setAuth } = useContext(AuthContext);
+  const { setAuth, currentUser, setCurrentUser } = useContext(AuthContext);
   const userRef = useRef();
   const errRef = useRef();
 
@@ -45,8 +45,9 @@ function Authentication() {
                 headers: { 'Content-Type': 'application/json' },
             }
         );
+        setCurrentUser(response?.data);
         console.log(response?.data);
-        sessionStorage.setItem('JWTtoken', response.data.token);
+        sessionStorage.setItem("user", JSON.stringify(response.data));
         const JWTtoken = response?.data?.token;
         setAuth({ user, pwd, JWTtoken });
         setUser('');
