@@ -2,3 +2,123 @@
 @import "../../styles/fonts";
 @import "../../styles/global";
 @import "../../styles/variables";
+
+.greene__profile {
+    background: var(--Background, linear-gradient(180deg, #E3F9B1 0%, rgba(228, 235, 212, 0.00) 100%));
+    padding: 2.25rem;
+    text-align: left;
+    font-size: 1rem;
+
+    @include tablet-breakpoint {
+        padding: 3.75rem;
+        font-size: 1.5rem;
+    }
+
+    @include desktop-breakpoint {
+        padding: 7.875rem;
+        font-size: 1.75rem;
+    }
+
+    &-userinformation {
+        padding-bottom: 1.5rem;
+        border-bottom: 0.125rem solid #333;
+
+        @include tablet-breakpoint {
+            padding-bottom: 2.5rem;
+        }
+
+        @include desktop-breakpoint {
+            padding-bottom: 3.5rem;
+        }
+    }
+
+    &-title {
+        font-size: 2.25rem;
+        margin-bottom: 1.5rem;
+        font-weight: 600;
+
+        @include tablet-breakpoint {
+            font-size: 3rem;
+            margin-bottom: 2rem;
+        }
+
+        @include desktop-breakpoint {
+            font-size: 4rem;
+            margin-bottom: 2.5rem;
+        }
+    }
+
+    &-datatitle {
+        font-weight: 600;
+    }
+
+    &-information {
+        display: flex;
+        flex-direction: row;
+        margin-bottom: 1rem;
+
+        @include tablet-breakpoint {
+            margin-bottom: 1.5rem;
+        }
+
+        @include desktop-breakpoint {
+            margin-bottom: 2.5rem;
+        }
+    }
+
+    &-cta {
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+    }
+
+    &-edit {
+        border-radius: 0.625rem;
+        background: #333;
+        width: 4.125rem;
+        height: 2.5rem;
+        flex-shrink: 0;
+        font-size: 1rem;
+        border-style: none;
+        color: white;
+        margin-right: 1rem;
+
+        @include tablet-breakpoint {
+            width: 8.125rem;
+            margin-right: 2rem;
+            font-size: 1.25rem;
+        }
+
+        @include desktop-breakpoint {
+            width: 14.625rem;
+            height: 4.5rem;
+            margin-right: 4rem;
+            font-size: 1.5rem;
+        }
+    }
+
+    &-logout {
+        border-radius: 0.625rem;
+        background: #333;
+        width: 4.125rem;
+        height: 2.5rem;
+        flex-shrink: 0;
+        font-size: 1rem;
+        border-style: none;
+        color: white;
+        margin-left: 1rem;
+
+        @include tablet-breakpoint {
+            width: 8.125rem;
+            margin-right: 2rem;
+            font-size: 1.25rem;
+        }
+
+        @include desktop-breakpoint {
+            width: 14.625rem;
+            height: 4.5rem;
+            margin-right: 4rem;
+            font-size: 1.5rem;
+        }
+    }
+}

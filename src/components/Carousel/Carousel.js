@@ -3,10 +3,15 @@ import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import Slider from "react-slick";
 import './Carousel.scss';
-import { useNavigate } from 'react-router-dom';
+import { useNavigate , useLocation } from 'react-router-dom';
+import { useContext } from "react";
+import AuthContext from '../../context/AuthProvider';
 
 
 function Carousel() {
+
+    const location = useLocation();
+    const { currentUser, setCurrentUser } = useContext(AuthContext);
 
     var settings = {
         dots: false,
@@ -26,12 +31,18 @@ function Carousel() {
           ]
       };
 
-  // Initialise useNavigate hook to redirect to edit inventory screen
+  // Initialise useNavigate hook to redirection
   let navigate = useNavigate();
 
-  // Sending the details to edit inventory page
+  // Navigating Subscribe page or Register Page
   const handleClick = function (event) {
-    navigate(`/register`);
+    if (location.pathname === "/subscribe" && currentUser) {
+        console.log("subscribe")
+    } else if (currentUser) {
+        navigate(`/subscribe`);
+    } else {
+        navigate(`/register`);
+    }
   }
 
   return (

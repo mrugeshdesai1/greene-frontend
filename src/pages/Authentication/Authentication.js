@@ -49,6 +49,7 @@ function Authentication() {
         console.log(response?.data);
         sessionStorage.setItem("user", JSON.stringify(response.data));
         const JWTtoken = response?.data?.token;
+        localStorage.setItem("userInfo",JWTtoken)
         setAuth({ user, pwd, JWTtoken });
         setUser('');
         setPwd('');

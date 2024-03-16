@@ -9,10 +9,10 @@ function Header() {
 
   const [hamburgerOpen, setHamburgerOpen] = useState(false);
 
-  // Initialise useNavigate hook to redirect to edit inventory screen
+  // Initialise useNavigate for page redirection
   let navigate = useNavigate();
 
-  // Sending the details to edit inventory page
+  // Navigate to home page
   const handleClick = function (event) {
     navigate(`/`);
   }
