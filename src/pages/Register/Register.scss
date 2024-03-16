@@ -2,3 +2,125 @@
 @import "../../styles/fonts";
 @import "../../styles/global";
 @import "../../styles/variables";
+
+.greene__register {
+    font-size: 1.25rem;
+    color: white;
+    height: 50rem;
+    padding: 3.25rem;
+    background: linear-gradient(0deg,rgba(51, 51, 51, 0.51),rgba(51, 51, 51, 0.51)), url('../../assets/Images/2150858289.jpg');
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    max-width: 100vw;
+
+    @include tablet-breakpoint {
+        padding: 6rem;
+        height: 65rem;
+    }
+
+    @include desktop-breakpoint {
+        padding: 9rem;
+        height: 100rem;
+        font-size: 2.25rem;
+    }
+
+    &-title {
+        font-size: 2.25rem;
+
+        @include desktop-breakpoint {
+            font-size: 3.5rem;
+        }
+    }
+
+    &-form {
+        padding: 1.25rem 0;
+
+        @include desktop-breakpoint {
+            padding: 2.25rem 0;
+        }
+    }
+
+    &-label {
+        display: flex;
+        margin-bottom: 0.5rem;
+    }
+
+    &-firstname, &-lastname, &-username, &-email, &-password{
+        height: 2.5rem;
+        background: transparent;
+        border-style: none;
+        border-bottom: 0.125rem solid #E7F0D2;;
+        margin-bottom: 1rem;
+        font-size: 1rem;
+        padding: 0.5rem;
+        color: white;
+
+        &:focus{
+            outline: none;
+        }
+
+        @include desktop-breakpoint {
+            height: 3.75rem;
+            font-size: 1.75rem;
+            margin-bottom: 2rem;
+        }
+    }
+
+    &-submitbutton {
+        border-radius: 1rem;
+        background: #333;
+        width: 10.875rem;
+        height: 3rem;
+        flex-shrink: 0;
+        color: white;
+        border-right: none;
+        font-size: 1.25rem;
+
+        @include desktop-breakpoint {
+            height: 4rem;
+            font-size: 2.25rem;
+            width: 23rem;
+        }
+
+    }
+
+    &-alreadyregistered {
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+    }
+
+    &-text {
+        width: auto;
+    }
+
+    &-navigation {
+        width: auto;
+        text-decoration: underline;
+        color: white;
+        margin-left: 0.75rem;
+    }
+
+    &-success {
+        color: white;
+        margin-bottom: 0.5rem;
+    }
+
+    &-successnavigation {
+        text-decoration: underline;
+        color: white;
+    }
+
+    &-offscreen {
+        position: absolute;
+        left: -9999px;
+    }
+
+    &-errmsg {
+        background-color: #333;
+        color: white;
+        padding: 0.5rem;
+        margin-bottom: 0.5rem;
+    }
+}

@@ -119,7 +119,7 @@ function Register() {
         <div className='greene__register-register'>
           {/* Place holder to display error message in case there is invalid entry*/}
           <div ref={errRef} className={errMsg ? "greene__register-errmsg" : "greene__register-offscreen"} aria-live="assertive">{errMsg}</div>
-          <div className='greene__register-title'>Let's get you registered!</div>
+          <div className='greene__register-title'>Registration!</div>
           <form className='greene__register-form' onSubmit={handleSignup}>
             <label className='greene__register-label' htmlFor="firstname">First Name:</label>
             <input className='greene__register-firstname' type="text" id="firstname" ref={userRef} autoComplete="off" onChange={(e) => setFirstName(e.target.value)} value={firstName} required/>
