@@ -4,7 +4,7 @@ import "slick-carousel/slick/slick-theme.css";
 import Slider from "react-slick";
 import './Carousel.scss';
 import { useNavigate , useLocation } from 'react-router-dom';
-import { useContext } from "react";
+import { useContext, useRef } from "react";
 import AuthContext from '../../context/AuthProvider';
 
 
@@ -37,7 +37,7 @@ function Carousel() {
   // Navigating Subscribe page or Register Page
   const handleClick = function (event) {
     if (location.pathname === "/subscribe" && currentUser) {
-        console.log("subscribe")
+        console.log(event.target);
     } else if (currentUser) {
         navigate(`/subscribe`);
     } else {
