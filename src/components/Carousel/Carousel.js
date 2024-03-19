@@ -35,9 +35,10 @@ function Carousel() {
   let navigate = useNavigate();
 
   // Navigating Subscribe page or Register Page
-  const handleClick = function (event) {
+  const handleClick = function (subscription) {
     if (location.pathname === "/subscribe" && currentUser) {
-        console.log(event.target);
+        console.log(subscription);
+        console.log(currentUser.id);
     } else if (currentUser) {
         navigate(`/subscribe`);
     } else {
@@ -64,7 +65,7 @@ function Carousel() {
                         <div className='greene__carousel-type'>Level 2</div>
                     </div>
                 </div>
-                <button className='greene__carousel-button' onClick={handleClick}>Subscribe</button>
+                <button className='greene__carousel-button' onClick= {() => {handleClick("Essential")}}>Subscribe</button>
             </div>
             <div className='greene__carousel-card'>
                 <div className='greene__carousel-cardtitle'>Standard</div>
@@ -81,7 +82,7 @@ function Carousel() {
                         <div className='greene__carousel-type'>Level 2</div>
                     </div>
                 </div>
-                <button className='greene__carousel-button' onClick={handleClick}>Subscribe</button>
+                <button className='greene__carousel-button' onClick= {() => {handleClick("Standard")}}>Subscribe</button>
             </div>
             <div className='greene__carousel-card'>
                 <div className='greene__carousel-cardtitle'>Unlimited</div>
@@ -98,7 +99,7 @@ function Carousel() {
                         <div className='greene__carousel-type'>Level 2</div>
                     </div>
                 </div>
-                <button className='greene__carousel-button' onClick={handleClick}>Subscribe</button>
+                <button className='greene__carousel-button' onClick= {() => {handleClick("Unlimited")}}>Subscribe</button>
             </div>
         </Slider>
     </div>
