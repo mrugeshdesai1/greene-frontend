@@ -3,15 +3,22 @@ import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import Slider from "react-slick";
 import './Carousel.scss';
-import { useNavigate , useLocation } from 'react-router-dom';
-import { useContext, useRef } from "react";
+import { useNavigate , useLocation , Link} from 'react-router-dom';
+import { useContext, useState } from "react";
 import AuthContext from '../../context/AuthProvider';
+import axios from 'axios';
 
 
 function Carousel() {
 
     const location = useLocation();
     const { currentUser, setCurrentUser } = useContext(AuthContext);
+
+    // use state for setting successful subscription
+  const [subscribed, setSubscribed] = useState(false);
+
+    // use state for error message
+    const [errMsg, setErrMsg] = useState('');
 
     var settings = {
         dots: false,
@@ -35,10 +42,31 @@ function Carousel() {
   let navigate = useNavigate();
 
   // Navigating Subscribe page or Register Page
-  const handleClick = function (subscription) {
+  const handleClick = async function (subscription) {
     if (location.pathname === "/subscribe" && currentUser) {
-        console.log(subscription);
-        console.log(currentUser.id);
+
+        // Creating an object to send it feed at backend to subscribe
+        const subscriptionDetails = {
+            userId: currentUser.id,
+            plan: subscription,
+        };
+
+        let bearerToken = localStorage.getItem("userInfo");
+
+        try {
+            const response = await axios.post(`${process.env.REACT_APP_API_URL}/subscribe`, subscriptionDetails,
+                {
+                    headers: {
+                        Authorization: "Bearer "+bearerToken
+                    }
+                }
+            );
+            setSubscribed(true);
+        } catch (err) {
+            if (!err?.response) {
+                setErrMsg('Subscription unsuccessful. Please try again');
+            } 
+        }
     } else if (currentUser) {
         navigate(`/subscribe`);
     } else {
@@ -48,6 +76,14 @@ function Carousel() {
 
   return (
     <div className='greene__carousel'>
+        { subscribed ? (
+            <section className='greene__carousel-success'>
+            <div className='greene__carousel-successtitle'>You have success subscribed!</div>
+            <Link to={`/profile`} className='greene__carousel-successnavigation'>My Profile</Link>
+          </section>
+        ):(
+        <>    
+        <div className={errMsg ? "greene__carousel-errmsg" : "greene__carousel-offscreen"} aria-live="assertive">{errMsg}</div>
         <div className='greene__carousel-title'>Subscribe and Save</div>
         <Slider {...settings} className='greene__carousel-slider'>
             <div className='greene__carousel-card'>
@@ -102,6 +138,8 @@ function Carousel() {
                 <button className='greene__carousel-button' onClick= {() => {handleClick("Unlimited")}}>Subscribe</button>
             </div>
         </Slider>
+        </>
+        )}
     </div>
   )
 }
