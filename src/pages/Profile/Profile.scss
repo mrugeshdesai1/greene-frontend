@@ -121,4 +121,77 @@
             font-size: 1.5rem;
         }
     }
+
+    &-subscriptioninfo {
+        padding: 1.5rem 0rem;
+        border-bottom: 0.125rem solid #333;
+
+        @include tablet-breakpoint {
+            padding: 2.5rem 0rem;
+        }
+
+        @include desktop-breakpoint {
+            padding: 3.5rem 0rem;
+        }
+    }
+
+    &-subscriptiontitle {
+        font-size: 2.25rem;
+        margin-bottom: 1.5rem;
+        font-weight: 600;
+
+        @include tablet-breakpoint {
+            font-size: 3rem;
+            margin-bottom: 2rem;
+        }
+
+        @include desktop-breakpoint {
+            font-size: 4rem;
+            margin-bottom: 2.5rem;
+        }
+    }
+
+    &-plantitle {
+        font-weight: 600;
+    }
+
+    &-subscriptiondetails {
+        display: flex;
+        flex-direction: row;
+        margin-bottom: 1rem;
+
+        @include tablet-breakpoint {
+            margin-bottom: 1.5rem;
+        }
+
+        @include desktop-breakpoint {
+            margin-bottom: 2.5rem;
+        }
+    }
+
+    &-cancelcta {
+        border-radius: 0.625rem;
+        background: #333;
+        width: 4.125rem;
+        height: 2.5rem;
+        flex-shrink: 0;
+        font-size: 1rem;
+        border-style: none;
+        color: white;
+        margin-left: 1rem;
+
+        @include tablet-breakpoint {
+            width: 8.125rem;
+            margin-right: 2rem;
+            font-size: 1.25rem;
+        }
+
+        @include desktop-breakpoint {
+            width: 14.625rem;
+            height: 4.5rem;
+            margin-right: 4rem;
+            font-size: 1.5rem;
+        }
+    }
+
 }

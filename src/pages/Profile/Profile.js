@@ -11,10 +11,12 @@ function Profile() {
 
   const [userData, setUserData] = useState([]);
 
+  const [subscriptionData, setSubscriptionData ] = useState([]);
+
+  let bearerToken = localStorage.getItem("userInfo");
+
   // Fetch logged in user information
   function renderUserInformation() {
-
-    let bearerToken = localStorage.getItem("userInfo");
 
     axios.get(`${process.env.REACT_APP_API_URL}/currentUser` , {
       headers: {
@@ -24,9 +26,28 @@ function Profile() {
       .then(response => {
         setUserData(response.data);
       }).catch(error => {
-        console.log("There is problem fetching userdata");
+        console.log("There is problem fetching user data");
       });
   }
+
+  // Fetch logged in user information
+  function renderSubscriptionInformation() {
+
+    axios.get(`${process.env.REACT_APP_API_URL}/subscription/${currentUser.id}` , {
+      headers: {
+        Authorization: "Bearer "+bearerToken
+      }
+    })
+      .then(response => {
+        setSubscriptionData(response.data);
+      }).catch(error => {
+        console.log("There is problem fetching subscription data");
+      });
+  }
+
+  // Converting date to appropriate format
+  let d = new Date(subscriptionData.created_at)
+  let newDate = d.toDateString();
 
   // Initialise useNavigate hook to redirection
   let navigate = useNavigate();
@@ -50,6 +71,10 @@ function Profile() {
     renderUserInformation();
   }, []);
 
+  useEffect(() => {
+    renderSubscriptionInformation();
+  }, []);
+
   return (
     <div className='greene__profile'>
       <div className='greene__profile-userinformation'>
@@ -69,6 +94,20 @@ function Profile() {
         <div className='greene__profile-cta'>
           <button className='greene__profile-edit'>Edit</button>
           <button className='greene__profile-logout' onClick={handelLogout}>Log out</button>
+        </div>
+      </div>
+      <div className='greene__profile-subscriptioninfo'>
+      <div className='greene__profile-subscriptiontitle'>Subscription</div>
+        <div className='greene__profile-subscriptiondetails'>
+            <div className='greene__profile-plantitle'>Plan:</div>
+            <div className='greene__profile-plandata'>{subscriptionData.planName}</div>
+        </div>
+        <div className='greene__profile-subscriptiondetails'>
+            <div className='greene__profile-plantitle'>Plan Start Date:</div>
+            <div className='greene__profile-plandata'>{newDate}</div>
+        </div>
+        <div className='greene__profile-cta'>
+          <button className='greene__profile-cancelcta'>Cancel</button>
         </div>
       </div>
     </div>
