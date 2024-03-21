@@ -97,7 +97,7 @@ function Profile() {
         </div>
       </div>
       <div className='greene__profile-subscriptioninfo'>
-      <div className='greene__profile-subscriptiontitle'>Subscription</div>
+        <div className='greene__profile-subscriptiontitle'>Subscription</div>
         <div className='greene__profile-subscriptiondetails'>
             <div className='greene__profile-plantitle'>Plan:</div>
             <div className='greene__profile-plandata'>{subscriptionData.planName}</div>
@@ -108,6 +108,13 @@ function Profile() {
         </div>
         <div className='greene__profile-cta'>
           <button className='greene__profile-cancelcta'>Cancel</button>
+        </div>
+      </div>
+      <div className='greene__profile-sessionmanagement'>
+        <div className='greene__profile-sessiontitle'>Session</div>
+        <div className='greene__profile-sessioncta'>
+          <button className='greene__profile-sessionstart'>Start Charging</button>
+          <button className='greene__profile-sessionstop'>Stop Charging</button>
         </div>
       </div>
     </div>
