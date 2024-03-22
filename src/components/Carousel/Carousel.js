@@ -12,6 +12,8 @@ import axios from 'axios';
 function Carousel() {
 
     const location = useLocation();
+
+    // call the current logged-in user from Authcontext
     const { currentUser, setCurrentUser } = useContext(AuthContext);
 
     // use state for setting successful subscription
@@ -20,6 +22,7 @@ function Carousel() {
     // use state for error message
     const [errMsg, setErrMsg] = useState('');
 
+    // carousel settings for responsive design where below breakpoint 768 the setting under it will apply
     var settings = {
         dots: false,
         infinite: false,
@@ -41,7 +44,9 @@ function Carousel() {
   // Initialise useNavigate hook to redirection
   let navigate = useNavigate();
 
-  // Navigating Subscribe page or Register Page
+  // If the user is not logged in, user is navigated to Register page on clicking subscribe button
+  // If the user is logged in, user is navigated to Subscribe page on clicking subscribe button
+  // If the user is logged in and user is Subscribe page, user subscribes to selected plan and is given success message and further can navigate to Profile page.
   const handleClick = async function (subscription) {
     if (location.pathname === "/subscribe" && currentUser) {
 

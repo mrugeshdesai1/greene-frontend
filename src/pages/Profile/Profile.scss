@@ -287,4 +287,66 @@
         }
     }
 
+    &-startnotification {
+       text-align: center;
+    }
+
+    &-offscreen {
+        position: absolute;
+        left: -9999px;
+    }
+
+    &-errmsg {
+        background-color: #333;
+        color: white;
+        padding: 0.5rem;
+        margin-bottom: 0.5rem;
+    }
+
+    &-stopnotification {
+        text-align: center;
+     }
+ 
+     &-stopoffscreen {
+         position: absolute;
+         left: -9999px;
+     }
+ 
+     &-stoperrmsg {
+         background-color: #333;
+         color: white;
+         padding: 0.5rem;
+         margin-bottom: 0.5rem;
+     }
+
+     &-canceloffscreen {
+        position: absolute;
+        left: -9999px;
+    }
+
+    &-cancelerrmsg {
+        background-color: #333;
+        color: white;
+        padding: 0.5rem;
+        margin-bottom: 0.5rem;
+    }
+
+    &-successcancellation {
+        margin-bottom: 0.5rem;
+        padding-top: 1.5rem;
+        text-align: center;
+
+        @include tablet-breakpoint {
+            padding-top: 2.5rem;
+        }
+
+        @include desktop-breakpoint {
+            padding-top: 3.5rem;
+        }
+    }
+
+    &-successnavigation {
+        text-decoration: underline;
+    }
+
 }

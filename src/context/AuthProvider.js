@@ -7,6 +7,8 @@ export const AuthProvider = ({ children }) => {
     const [currentUser, setCurrentUser] = useState(null);
     const user = sessionStorage.getItem("user");
 
+    // if the user is logged in and the JWT is stored in the session storage then with GET request set the current user to the logged..
+    // ..in user data to be used for protected pages like profile page.
     useEffect(() => {
         if (user && !currentUser) {
           fetch(`/currentUser`, {

@@ -6,8 +6,10 @@ import AuthContext from '../../context/AuthProvider';
 
 function HeaderActionButton() {
 
+  // call the current logged-in user from Authcontext
   const { currentUser, setCurrentUser } = useContext(AuthContext);
 
+  //If the user is logged in change the text of button to PROFILE and navigate to profile page
   return (
     <>
     { currentUser ? (

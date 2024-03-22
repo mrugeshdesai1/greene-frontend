@@ -13,8 +13,10 @@ import Profile from './pages/Profile/Profile';
 
 function App() {
 
+  // call the current logged-in user from Authcontext
   const { currentUser } = useContext(AuthContext);
 
+  // Protected routes are Profile and subscribe page as they carry sensitive information
   return (
     <div className="App">
       <BrowserRouter>

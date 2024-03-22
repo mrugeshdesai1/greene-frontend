@@ -11,7 +11,7 @@ function LocationMap() {
 
   // Fetch charging stations data from the Express.js backend
   function renderStations() {
-    axios.get('http://localhost:8080/charging-stations')
+    axios.get(`${process.env.REACT_APP_API_URL}/charging-stations`)
       .then(response => {
         console.log(response.data)
         setChargingStations(response.data);
