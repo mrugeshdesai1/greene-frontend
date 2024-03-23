@@ -1,70 +1,30 @@
-# Getting Started with Create React App
+# Green-E
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+## Introduction:
+With the world shifting to the green energy, one of the major sectors that is transforming is the automobile sector where electric vehicles are gaining more popularity. As the number of electrical vehicles will increase in coming years, we would require the network of charging stations. Green-E is Electric Vehicle (EV) Charging Subscription Service platform that provides users with a subscription-based model for accessing a network of electric vehicle charging stations.
 
-## Available Scripts
+This service can further be expanded to various new initiatives with a vision to support green energy as the charging stations that are developed under this network, has solar panels to support charging of the cars. Each charging station can also have an EV service location or may be located near charging station.
 
-In the project directory, you can run:
+## Problem:
+This service aims to simplify and enhance the charging experience for electric vehicle owners by offering various subscription plans tailored to their charging needs.
 
-### `npm start`
+## User Profile
+This application is primarily designed for the EV charging station network owners, who wants to increase their customer base, by providing subscription services to their customers. The end users are the EV owners and businesses who owns fleet of EVs. End users subscribe to one of the plans based on their charging needs using this application. There is no specific requirement of devices as the users can access the application from their smartphones or tablets or laptops with internet connection. User can start/stop the charging session using the application.
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+## Getting Started
+To run this project, run $ npm install in project folder to get all dependencies and packages.
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+## .env file
+Create .env file at root of the project folder and add the following:
+- REACT_APP_MAPBOX_API_KEY (Please sign up for a MapBox account to get an access token and enter it here)
+- REACT_APP_API_URL (Please enter your backend API url here)
 
-### `npm test`
+## Now you are all set
+Run $ npm start
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+## Tech Stack used:
+- ReactJS
+- SASS
 
-### `npm run build`
-
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
-
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
-
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### `npm run eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
-
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
-
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+### Linkedin: linkedin.com/in/mrugeshdesaiqa
+### Email: mrugesh.desai1@gmail.com
