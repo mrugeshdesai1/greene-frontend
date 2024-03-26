@@ -81,7 +81,7 @@
     } 
     
     &-description {
-        padding: 1rem;
+        padding: 1rem 0rem 1rem 1rem;
         display: flex;
         flex-direction: column;
         justify-content: space-between;
@@ -100,9 +100,9 @@
     }
 
     &-boldtext {
-        font-size: 1.25rem;
-        max-width: 13.375rem;
-        min-width: 13.375rem;
+        font-size: 1rem;
+        max-width: 10rem;
+        min-width: 10rem;
         line-height: 100%;
 
         @include tablet-breakpoint {
@@ -119,9 +119,9 @@
     }
 
     &-text {
-        font-size: 0.875rem;
-        max-width: 14rem;
-        min-width: 14rem;
+        font-size: 0.75rem;
+        max-width: 8rem;
+        min-width: 8rem;
 
         @include tablet-breakpoint {
             font-size: 1rem;

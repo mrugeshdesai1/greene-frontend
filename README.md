@@ -20,7 +20,7 @@ Create .env file at root of the project folder and add the following:
 - REACT_APP_API_URL (Please enter your backend API url here)
 
 ## Now you are all set
-Run $ npm start
+Run $ npm run dev
 
 ## Tech Stack used:
 - ReactJS

@@ -59,10 +59,16 @@
     &-navlink {
         list-style-type: none;
         width: auto;
+        font-size: 0.75rem;
 
         @include tablet-breakpoint {
             width: auto;
             display: flex;
+            font-size: 1rem;
+        }
+
+        @include desktop-breakpoint {
+            font-size: 2rem;
         }
     }
 
